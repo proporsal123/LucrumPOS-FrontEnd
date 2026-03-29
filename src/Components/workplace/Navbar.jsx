@@ -1,39 +1,12 @@
-import { BellRing, ChevronLeft, Search } from 'lucide-react'
+import { BellRing, Search } from 'lucide-react'
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-
-    const location = useLocation().pathname.includes('/material')
-    const newLocation = useLocation().pathname.includes('/material/details')
-    const stockLocation = useLocation().pathname.includes('/stock')
-    const newStockLocation = useLocation().pathname.includes('/stock-list')
-
-
-    const navigate = useNavigate()
 
     return (
         <div className='w-full bg-gray-100 px-36 py-1 flex justify-between items-center'>
             <div className='flex items-center gap-2'>
                 <p className='relative cursor-pointer text-xl font-semibold'>LUCRUM</p>
-                {location && <div onClick={() => navigate('/lucrum/pos')} className='flex items-center gap-1 cursor-pointer hover:text-gray-800'>
-                    <ChevronLeft className='w-3 h-3' />
-                    <p className='text-xs'>Material Request</p>
-                </div>}
-                {newLocation && <div onClick={() => navigate('/lucrum/material')} className='flex items-center gap-1 cursor-pointer hover:text-gray-800'>
-                    <ChevronLeft className='w-3 h-3' />
-                    <p className='text-xs'>New Material Request</p>
-                </div>}
-                {stockLocation && <div onClick={() => navigate('/lucrum/pos')} className='flex items-center gap-1 cursor-pointer hover:text-gray-800'>
-                    <ChevronLeft className='w-3 h-3' />
-                    <p className='text-xs'>Stock Entry</p>
-                </div>}
-                {newStockLocation &&
-                    <div onClick={() => navigate('/lucrum/stock')} className='flex items-center gap-1 cursor-pointer hover:text-gray-800'>
-                        <ChevronLeft className='w-3 h-3' />
-                        <p className='text-xs'>New Stock</p>
-                    </div>
-                }
             </div>
             <div className='flex items-center gap-6'>
                 <div className='relative rounded-lg'>

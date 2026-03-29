@@ -7,7 +7,7 @@ const Workplace = () => {
   return (
     <div className='bg-white'>
         <Navbar/>
-        <div className=''>  
+        <div className='h-screen'>  
             <Outlet/>
         </div>
     </div>
