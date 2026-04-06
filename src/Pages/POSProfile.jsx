@@ -2,7 +2,7 @@ import React from 'react'
 
 const POSProfile = () => {
   return (
-    <div>POSProfile</div>
+    <div></div>
   )
 }
 
