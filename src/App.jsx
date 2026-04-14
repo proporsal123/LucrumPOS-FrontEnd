@@ -7,17 +7,14 @@ import LucrumPOS from './Pages/LucrumPOS'
 import POS from './Pages/POS'
 import Demand from './Pages/Demand'
 import RejectionEntry from './Pages/RejectionEntry'
-import StockTake from './Pages/StockTake'
 import OpeningShift from './Pages/OpeningShift'
 import ClosingShift from './Pages/ClosingShift'
-import POSProfile from './Pages/POSProfile'
-import Depository from './Pages/Depository'
 import Workspace from './Pages/Workspace'
 
 const App = () => {
   return (
     <div>
-      
+
       <Routes>
         <Route path='/*' element={<POSapp />} >
           <Route index element={<Dashboard />} />
@@ -29,11 +26,8 @@ const App = () => {
           <Route path='pos' element={<POS />} />
           <Route path='demand' element={<Demand />} />
           <Route path='rejection-entry' element={<RejectionEntry />} />
-          <Route path='stock-take' element={<StockTake />} />
           <Route path='opening-shift' element={<OpeningShift />} />
           <Route path='closing-shift' element={<ClosingShift />} />
-          <Route path='pos-profile' element={<POSProfile />} />
-          <Route path='depository' element={<Depository />} />
         </Route>
       </Routes>
     </div>

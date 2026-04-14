@@ -11,33 +11,12 @@ const LucrumPOS = () => {
         <>
             <EditWorkspace title='LucrumPOS' />
             <div className='flex'>
-                <Sidebar/>
+                <Sidebar />
                 <div className='px-5 mr-10 py-2 border-r border-b border-l mt-3 border-gray-100 shadow-md flex-1 min-h-[70vh]'>
-                    <p className='my-4 text-gray-600'>Lucrum POS</p>
-                    <p className='flex cursor-pointer w-1/8 items-center hover:text-black transition-all gap-1 '>
-                        Lucrum POS
-                        <ArrowUpRight strokeWidth={1.2} className='w-4 h-4' />
-                    </p>
-                    <div className='flex flex-wrap text-gray-600 my-10 gap-y-10 gap-52 '>
-                        <div className=''>
-                            <h1 className='font-semibold mb-3 text-black'>POS</h1>
-                            <p onClick={() => navigate('/')} className='flex items-center hover:text-black transition-all cursor-pointer gap-1'>Lucrum POS App <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                            <p onClick={()=> navigate('/workspace/depository')} className='flex items-center hover:text-black cursor-pointer transition-all gap-1'>Depository <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                        </div>
-                        <div className=''>
-                            <h1 className='font-semibold mb-3 text-black'>Profile</h1>
-                            <p onClick={()=> navigate('/workspace/pos-profile')} className='flex items-center cursor-pointer hover:text-black transition-all gap-1'>POS Profile <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                        </div>
-                        <div className=''>
-                            <h1 className='font-semibold mb-3 text-black'>Shift</h1>
-                            <p  onClick={()=> navigate('/workspace/opening-shift')} className='flex items-center cursor-pointer hover:text-black transition-all gap-1'>Opening Shift <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                            <p onClick={()=> navigate('/workspace/closing-shift')} className='flex items-center cursor-pointer hover:text-black transition-all gap-1'>Closing Shift <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                        </div>
-                        <div className='whitespace-nowrap'>
-                            <h1 className='font-semibold mb-3 text-black'>Custom Reports</h1>
-                            <p className='flex items-center cursor-pointer hover:text-black transition-all gap-1'>Offline Sync Report <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                            <p className='flex items-center cursor-pointer hover:text-black transition-all gap-1'>Offline Sync Report-Branch Wise <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
-                        </div>
+                    <p className='my-4 text-black text-lg font-semibold'>Lucrum POS</p>
+                    <div className='flex text-gray-600 my-10 gap-10 '>
+                        <p onClick={() => navigate('/')} className='flex items-center hover:text-black transition-all cursor-pointer gap-1'>Lucrum POS App <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
+                        <p onClick={() => navigate('/workspace/demand-forecasting')} className='flex items-center hover:text-black cursor-pointer transition-all gap-1'>Demand Forecasting <ArrowUpRight strokeWidth={1.6} className='w-4 h-4' /> </p>
                     </div>
                 </div>
             </div>

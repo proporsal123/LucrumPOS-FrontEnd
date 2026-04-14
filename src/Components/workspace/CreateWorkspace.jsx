@@ -12,12 +12,12 @@ const CreateWorkspace = () => {
         <div className='border-b border-gray-200 px-5 flex items-center justify-between py-5'>
           <p className='text-lg font-medium'>New Workspace</p>
           <XIcon onClick={() => setShowWorkspace(false)} className='w-5 cursor-pointer h-5' />
-        </div>        
+        </div>
         <div className='border-b text-gray-400 border-gray-200 px-5 py-5'>
           <div className='flex mb-3 items-center gap-6'>
             <div className='flex flex-col gap-1 w-full'>
               <label htmlFor="">Title</label>
-              <input type="text" className='outline-gray-300 rounded-lg bg-gray-100 px-3 py-1'/>
+              <input type="text" className='outline-gray-300 rounded-lg bg-gray-100 px-3 py-1' />
             </div>
             <div className='flex flex-col gap-1 w-full'>
               <label htmlFor="">Icon</label>

@@ -2,13 +2,13 @@ import React from 'react'
 
 const Payment = () => {
   return (
-    <div className='w-full max-w-110 mt-3 bg-white rounded-lg shadow-lg p-2'>
-            <div className='flex min-h-50 justify-between bg-gray-100 p-2 rounded-lg'>
+    <div className='w-full max-w-110 mt-3 bg-white rounded-lg shadow-lg p-2 overflow-y-auto max-h-[calc(100vh-64px)]'>
+            <div className='flex min-h-50 justify-between bg-gray-100 p-2 pr-6 rounded-lg'>
                 <p>ITEMS</p>
                 <p>QTY.</p>
                 <p>PRICE</p>
             </div>
-            <div className='mt-4 bg-gray-100 rounded-lg py-3'>
+            <div className='mt-4 bg-gray-100 rounded-lg py-4'>
                 <p className='font-semibold px-2'>Order Summary</p>
                 <div className='px-4 flex flex-col gap-1'>
                     <div className='flex justify-between items-center text-gray-700 my-2'>
