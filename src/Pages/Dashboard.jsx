@@ -2,16 +2,19 @@ import { RotateCwIcon } from "lucide-react"
 import ClosePOS from "../Components/posApp/ClosePOS"
 import Payment from "../Components/posApp/Payment"
 import { assets, categories, products } from "../assets/assets"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AppContext } from "../context/AppContext"
 
 const Dashboard = () => {
 
+  const { showDetail, setShowDetail, setSelectedProduct } = useContext(AppContext)
+
   const [selectedCategory, setSelectedCategory] = useState(categories[0])
-  const [selectedProduct, setSelectedProduct] = useState(products.filter((product) => product.category === categories[0]))
+  const [filterProduct, setFilterProduct] = useState(products.filter((product) => product.category === categories[0]))
 
   const handleCategorySelect = (category) => {
     let filteredProducts = products.filter((product) => product.category === category)
-    setSelectedProduct(filteredProducts)
+    setFilterProduct(filteredProducts)
     setSelectedCategory(category)
   }
 
@@ -40,11 +43,11 @@ const Dashboard = () => {
           </div>
           <p className='mt-6 text-lg mb-4'>Products</p>
           {
-            selectedProduct.length > 0 ? (
+            filterProduct.length > 0 ? (
               <div className='flex mx-2 flex-wrap gap-6 gap-y-8'>
             {
-              selectedProduct.map((product, idx) => (
-                <div className='w-36 rounded-3xl cursor-pointer hover:-translate-y-1 transition-all hover:bg-gray-200' key={idx}>
+              filterProduct.map((product, idx) => (
+                <div onClick={()=>{ setSelectedProduct(product); setShowDetail(true); }} className='w-36 rounded-3xl cursor-pointer hover:-translate-y-1 transition-all  hover:bg-gray-200' key={idx}>
                   <img className='h-40 object-cover rounded-t-3xl' src={product.image} alt='product image' />
                   <div className="text-center py-4">
                     <p className=""> {product.name} </p>
@@ -56,7 +59,7 @@ const Dashboard = () => {
           </div>
             ) : (
               <div className="flex items-center justify-center">
-                <img src={assets.No_Data} alt="" />
+                <img src={assets.No_Data} alt=""/>
               </div>
             )
           }

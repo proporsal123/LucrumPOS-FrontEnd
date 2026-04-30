@@ -31,150 +31,171 @@ export const assets = {
 
 export const products = [
     {
-        _id: "1",
+        _id: "01",
         name: "Apple Cup Pie",
         image: Apple_Cup_Pie,
         price: 250,
-        category: "Exclusive"
+        category: "Exclusive",
+        inventory: "0",
     },
     {
-        _id: "2",
+        _id: "02",
         name: "Walnut Cup Pie",
         image: Walnut_Cup_Pie,
         price: 250,
-        category: "Exclusive"
+        category: "Exclusive",
+        inventory: "0",
     },
     {
-        _id: "3",
+        _id: "03",
         name: "Creme brulee",
         image: Creme_brulee,
         price: 250,
-        category: "Exclusive"
+        category: "Exclusive",
+        inventory: "0",
     },
     {
-        _id: "4",
+        _id: "04",
         name: "Hot Fudge",
         image: Hot_Fudge,
         price: 250,
-        category: "Sundae"
+        category: "Sundae",
+        inventory: "0",
     },
     {
-        _id: "5",
+        _id: "05",
         name: "Banana Split",
         image: Banana_Split,
         price: 250,
-        category: "Sundae"
+        category: "Sundae",
+        inventory: "0",
     },
     {
-        _id: "6",
+        _id: "06",
         name: "Strawberry Sundae",
         image: Strawberry_Sundae,
         price: 250,
-        category: "Sundae"
+        category: "Sundae",
+        inventory: "0",
     },
     {
-        _id: "7",
+        _id: "07",
         name: "Walnut Muffin",
         image: Walnut_Muffin,
         price: 250,
-        category: "Muffins"
+        category: "Muffins",
+        inventory: "0",
     },
     {
-        _id: "8",
+        _id: "08",
         name: "Salted Caramel Cupcake",
         image: Salted_Caramel_Cupcake,
         price: 250,
-        category: "Cup Cakes"
+        category: "Cup Cakes",
+        inventory: "0",
     },
     {
-        _id: "9",
+        _id: "09",
         name: "Chocolate Hazelnut",
         image: Chocolate_Hazelnut,
         price: 250,
-        category: "Cup Cakes"
+        category: "Cup Cakes",
+        inventory: "0",
     },
     {
         _id: "10",
         name: "Chocolate Cake",
         image: Chocolate_Cake,
         price: 750,
-        category: "Cakes"
+        category: "Cakes",
+        inventory: "0",
     },
     {
         _id: "11",
         name: "Honey Cake",
         image: Honey_Cake,
         price: 750,
-        category: "Cakes"
+        category: "Cakes",
+        inventory: "0",
     },
     {
         _id: "12",
         name: "Peanut_Butter",
         image: Peanut_Butter,
         price: 250,
-        category: "Brownies"
+        category: "Brownies",
+        inventory: "0",
     },
     {
         _id: "13",
         name: "Double Chocolate",
         image: Double_Chocolate,
         price: 250,
-        category: "Cookies"
+        category: "Cookies",
+        inventory: "0",
     },
     {
         _id: "14",
         name: "Nutella Filled",
         image: Nutella_filled,
         price: 250,
-        category: "Cookies"
+        category: "Cookies",
+        inventory: "0",
     },
     {
         _id: "15",
         name: "Pistachio",
         image: Pistachio,
         price: 250,
-        category: "Cookies"
+        category: "Cookies",
+        inventory: "0",
     },
     {
         _id: "16",
         name: "Red Velvet",
         image: Red_Velvet,
         price: 250,
-        category: "Cookies"
+        category: "Cookies",
+        inventory: "0",
     },
     {
         _id: "17",
         name: "Triple Chocolate",
         image: Triple_Chocolate,
         price: 250,
-        category: "Cookies"
+        category: "Cookies",
+        inventory: "0",
     },
     {
         _id: "18",
         name: "Chocolate Donut",
         image: Chocolate_Donut,
         price: 450,
-        category: "Mini Donuts"
+        category: "Mini Donuts",
+        inventory: "0",
     },
     {
         _id: "19",
         name: "Double Chocolate Donut",
         image: Double_Chocolate_Donut,
         price: 450,
-        category: "Mini Donuts"
+        category: "Mini Donuts",
+        inventory: "0",
     },
     {
         _id: "20",
         name: "Oreo Donut",
         image: Oreo_Donut,
         price: 450,
-        category: "Mini Donuts"
+        category: "Mini Donuts",
+        inventory: "0",
     },
     {
         _id: "21",
         name: "Raspberry Donut",
         image: Raspberry_Donut,
         price: 450,
-        category: "Mini Donuts"
+        category: "Mini Donuts",
+        inventory: "0",
     },
 ]

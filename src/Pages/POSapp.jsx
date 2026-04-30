@@ -1,3 +1,4 @@
+import ItemsDetails from '../Components/posApp/ItemsDetails'
 import Navbar from '../Components/posApp/Navbar'
 import Sidebar from '../Components/posApp/Sidebar'
 import { Outlet } from 'react-router-dom'
@@ -5,6 +6,7 @@ import { Outlet } from 'react-router-dom'
 const POSapp = () => {
     return (
         <div className='bg-gray-100'>
+            <ItemsDetails/>
             <Navbar />
             <div className='flex'>
                 <Sidebar />
