@@ -7,6 +7,7 @@ const AppContextProvider = (props) => {
     const [showDetail, setShowDetail] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState(null)
     const [cartItems, setCartItems] = useState([])
+    const [holdOrders, setHoldOrders] = useState([])
 
     const addToCart = (product, quantity) => {
         if (!product || quantity < 1) return
@@ -27,6 +28,17 @@ const AppContextProvider = (props) => {
         setCartItems((currentItems) => currentItems.filter(item => item._id !== productId))
     }
 
+    const clearCart = () => setCartItems([])
+
+    const addHoldOrder = (order) => {
+        if (!order || order.items.length === 0) return
+        setHoldOrders((current) => [...current, order])
+    }
+
+    const removeHoldOrder = (indexToRemove) => {
+        setHoldOrders((current) => current.filter((_, index) => index !== indexToRemove))
+    }
+
     const value = {
         showWorkspace,
         setShowWorkspace,
@@ -36,7 +48,11 @@ const AppContextProvider = (props) => {
         setSelectedProduct,
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        clearCart,
+        holdOrders,
+        addHoldOrder,
+        removeHoldOrder
     }
 
     return (

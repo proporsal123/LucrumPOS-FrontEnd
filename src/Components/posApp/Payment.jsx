@@ -1,14 +1,37 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { Trash2Icon } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Payment = () => {
-  const { cartItems, removeFromCart } = useContext(AppContext)
+  const { cartItems, removeFromCart, addHoldOrder, clearCart } = useContext(AppContext)
+  const navigate = useNavigate()
   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0)
   const netTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const gst = Number((netTotal * 0.18).toFixed(2))
   const discount = 0
   const grandTotal = Number((netTotal + gst - discount).toFixed(2))
+
+  const itemPayment = () => {
+    if (cartItems.length !== 0) {
+      navigate('/billing')
+    }
+  }
+
+  const itemHold = () => {
+    if (cartItems.length !== 0) {
+      const holdOrder = {
+        items: cartItems,
+        totalQuantity,
+        grandTotal,
+        createdAt: new Date().toISOString(),
+      }
+
+      addHoldOrder(holdOrder)
+      clearCart()
+      navigate('/hold-order')
+    }
+  }
 
   return (
     <div className='w-full max-w-110 mt-3 bg-white rounded-lg shadow-lg p-2 overflow-y-auto max-h-[calc(100vh-64px)]'>
@@ -18,7 +41,7 @@ const Payment = () => {
           <p>QTY.</p>
           <p>PRICE</p>
         </div>
-        <div className='divide-y divide-gray-200'>
+        <div className='divide-y divide-teal-200'>
           {cartItems.map((item) => (
             <div key={item._id} className='flex gap-4 items-center py-3'>
               <div className='flex justify-between w-full text-teal-600 items-center'>
@@ -61,8 +84,8 @@ const Payment = () => {
             <p>Grand Total:</p>
             <p className='text-red-500'>Rs.{grandTotal.toFixed(2)}</p>
           </div>
-          <button className='w-full mt-3 cursor-pointer py-2 bg-teal-700 rounded-lg text-white font-bold'>Payment</button>
-          <button className='w-full mt-3 cursor-pointer py-2 bg-teal-700 rounded-lg text-white font-bold'>Hold</button>
+          <button onClick={itemPayment} className='w-full mt-3 cursor-pointer py-2 bg-teal-700 rounded-lg text-white font-bold'>Payment</button>
+          <button onClick={itemHold} className='w-full mt-3 cursor-pointer py-2 bg-teal-700 rounded-lg text-white font-bold'>Hold</button>
         </div>
 
       </div>

@@ -10,6 +10,7 @@ import RejectionEntry from './Pages/RejectionEntry'
 import OpeningShift from './Pages/OpeningShift'
 import ClosingShift from './Pages/ClosingShift'
 import Workspace from './Pages/Workspace'
+import Billing from './Pages/Billing'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path='hold-order' element={<HoldOrder />} />
           <Route path='sales-order' element={<SalesOrder />} />
+          <Route path='billing' element={<Billing />} />
         </Route>
         <Route path='/workspace/*' element={<Workspace />} >
           <Route path='lucrum-pos' element={<LucrumPOS />} />
