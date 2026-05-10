@@ -1,9 +1,11 @@
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
     const [showWorkspace, setShowWorkspace] = useState(false)
+    const [showPayment, setShowPayment] = useState(false)
     const [showDetail, setShowDetail] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState(null)
     const [cartItems, setCartItems] = useState([])
@@ -52,7 +54,9 @@ const AppContextProvider = (props) => {
         clearCart,
         holdOrders,
         addHoldOrder,
-        removeHoldOrder
+        removeHoldOrder,
+        showPayment,
+        setShowPayment
     }
 
     return (

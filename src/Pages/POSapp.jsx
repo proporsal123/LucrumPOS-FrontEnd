@@ -2,11 +2,13 @@ import ItemsDetails from '../Components/posApp/ItemsDetails'
 import Navbar from '../Components/posApp/Navbar'
 import Sidebar from '../Components/posApp/Sidebar'
 import { Outlet } from 'react-router-dom'
+import SplitPayment from '../Components/posApp/SplitPayment'
 
 const POSapp = () => {
     return (
         <div className='bg-gray-100'>
             <ItemsDetails/>
+            <SplitPayment/>
             <Navbar />
             <div className='flex'>
                 <Sidebar />

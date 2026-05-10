@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import ClosePOS from '../Components/posApp/ClosePOS'
 import { ArrowLeft, Ban, Banknote, CreditCard, Printer, SplitSquareHorizontal } from 'lucide-react'
 import Payment from '../Components/posApp/Payment'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../context/AppContext'
 
 const Billing = () => {
 
   const navigate = useNavigate()
+  const { setShowPayment , clearCart } = useContext(AppContext)
+
+  const cancelOrder = () => {
+    clearCart()
+    navigate(-1)
+  }
 
   return (
     <>
@@ -17,29 +24,29 @@ const Billing = () => {
             <p className='text-sm mt-2 font-semibold'>Select Payment method</p>
             <div className='flex items-center justify-between mt-2'>
               <div className='flex gap-3 cursor-pointer'>
-                <button className='flex items-center px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
+                <button className='flex items-center cursor-pointer px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
                   <Banknote className='w-5 h-5' />
                   Cash
                 </button>
-                <button className='flex items-center px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
+                <button className='flex items-center cursor-pointer px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
                   <CreditCard className='w-5 h-5' />
                   Keenu
                 </button>
-                <button className='flex items-center px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
+                <button className='flex items-center cursor-pointer px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
                   <CreditCard className='w-5 h-5' />
                   HBL
                 </button>
-                <button className='flex items-center px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
+                <button className='flex items-center cursor-pointer px-3 text-teal-500  gap-2 py-2 border border-teal-400 rounded-lg'>
                   <CreditCard className='w-5 h-5' />
                   MBL
                 </button>
               </div>
               <div className='text-sm flex items-center gap-1'>
-                <button onClick={()=>navigate(-1)} className='flex gap-1 items-center border rounded-lg border-teal-600 text-teal-700 px-4 py-2 bg-teal-100'>
+                <button onClick={()=>navigate(-1)} className='flex gap-1 cursor-pointer items-center border rounded-lg border-teal-600 text-teal-700 px-4 py-2 bg-teal-100'>
                   <ArrowLeft className='w-4 h-4' />
                   BACK
                 </button>
-                <button className='flex gap-1 items-center border rounded-lg border-red-600 text-red-700 px-4 py-2 bg-red-100'>
+                <button onClick={cancelOrder} className='flex gap-1 cursor-pointer items-center border rounded-lg border-red-600 text-red-700 px-4 py-2 bg-red-100'>
                   <Ban className='w-4 h-4' />
                   CANCEL ORDER
                 </button>
@@ -48,7 +55,7 @@ const Billing = () => {
             <div className='text-sm flex gap-4 mt-8'>
               <input className='px-2 border outline-none rounded-lg border-gray-400 text-gray-500 py-2 w-52' type="text" placeholder='Paid Amount' />
               <input className='px-2 border outline-none rounded-lg border-gray-400 text-gray-400 py-2 w-52' type="text" placeholder='Discount (max 0%)' />
-              <button onClick={() => setShowPayment(true)} className='text-teal-700 flex items-center gap-1 rounded-lg border border-teal-600 bg-teal-100 px-4'>
+              <button onClick={() => setShowPayment(true)} className='text-teal-700 cursor-pointer flex items-center gap-1 rounded-lg border border-teal-600 bg-teal-100 px-4'>
                 <SplitSquareHorizontal className='w-4 h-4' />
                 SPLIT PAYMENT
               </button>
