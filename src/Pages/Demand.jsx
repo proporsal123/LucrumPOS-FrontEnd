@@ -6,7 +6,7 @@ import { Ban, ChevronsUpDown, ListFilter, XIcon } from 'lucide-react'
 const Demand = () => {
   return (
     <>
-      <AddStock />
+      <AddStock title = 'Material Request'/>
       <div className='flex'>
         <Filter />
         <div className='mr-10 py-2 border-r border-b border-l mt-3 border-gray-200 flex-1 min-h-[70vh]'>
@@ -27,22 +27,22 @@ const Demand = () => {
             </div>
             <div className='flex pr-5 items-center gap-2'>
               <div className='flex items-center'>
-                <div className='flex items-center gap-1 rounded-bl-md rounded-tl-md bg-gray-200 px-2 p-1'>
+                <div className='flex items-center cursor-pointer gap-1 rounded-bl-md rounded-tl-md bg-gray-200 px-2 p-1'>
                   <ListFilter className='w-3.5 h-3.5' />
                   <p>Filter</p>
                   <p className='rounded-full px-2 bg-white'>3</p>
                 </div>
-                <div className='p-2 rounded-tr-md rounded-br-md bg-gray-100'>
+                <div className='p-2 cursor-pointer rounded-tr-md rounded-br-md bg-gray-100'>
                   <XIcon className='w-4 h-4' />
                 </div>
               </div>
-              <div className='flex p-1 px-2 bg-gray-200 rounded-md items-center'>
+              <div className='flex p-1 px-2 cursor-pointer bg-gray-200 rounded-md items-center'>
                 <div>
                   
                 </div>
                 <p>Transaction Date</p>
               </div>
-              <div className='p-1.5 rounded-md bg-red-200 text-red-700'>
+              <div className='p-1.5 cursor-pointer rounded-md bg-red-200 text-red-700'>
                 <Ban className='w-4 h-4' />
               </div>
             </div>

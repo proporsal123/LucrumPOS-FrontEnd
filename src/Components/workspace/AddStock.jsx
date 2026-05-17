@@ -2,7 +2,7 @@ import { ChevronsUpDown, Ellipsis, List, MenuIcon, Plus, RefreshCw } from 'lucid
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AddStock = () => {
+const AddStock = ({title}) => {
 
   const navigate = useNavigate()
 
@@ -10,7 +10,7 @@ const AddStock = () => {
     <div className='px-10 flex items-center justify-between w-full mt-8'>
       <div className='flex gap-2 mb-3 items-center'>
         <MenuIcon className='w-5 h-5 cursor-pointer' />
-        <p className='font-bold text-xl'>Material Request</p>
+        <p className='font-bold text-xl'> {title} </p>
       </div>
       <div className='flex items-center cursor-pointer justify-end gap-4'>
         <div className='flex items-center bg-gray-200 py-1 px-1.5 text-gray-700 rounded-md gap-1'>
@@ -26,7 +26,7 @@ const AddStock = () => {
         </div>
         <button onClick={() => navigate('/workspace/demand/')} className='flex cursor-pointer items-center text-white bg-black py-1 px-2 rounded-md gap-1'>
           <Plus strokeWidth={3} className='w-3 h-3' />
-          Add Material Request
+          Add {title}
         </button>
       </div>
     </div>
